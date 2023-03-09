@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Brian Cerqueira - Dev Full Stack</title>
+    <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOl0-8JYXff9wl-AJxZejgIchHacqXKSVitw&usqp=CAU">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" media="screen and (max-width: 821px)" href="responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        .show {
+            color: white;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <section id="navbar" class="flex s-around bg-color">
+        <div class="left-nav">
+            <h2 class="t-white">Brian Cerqueira</h2>
+        </div>
+        <div class="right-nav">
+            <ul class="flex">
+                <li><a href="#home" class="t-white roboto">Home</a></li>
+                <li><a href="#about" class="t-white roboto">Sobre mim</a></li>
+                <li><a href="#skills" class="t-white roboto">Habilidades</a></li>
+                <li><a href="#services" class="t-white roboto">Serviços</a></li>
+                <li><a href="#projects" class="t-white roboto">Projetos</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Bottom Navigator -->
+    <section id="bottom">
+        <div class="bottom-nav flex s-center items-center">
+            <ul class="flex s-around items-center">
+                <a href="#home">
+                    <li class="bottomo-hover flex s-center items-center"><i class="fa-solid fa-house"></i></li>
+                </a>
+                <a href="#about">
+                    <li class="bottomo-hover flex s-center items-center"><i class="fa-solid fa-user"></i></li>
+                </a>
+                <a href="#skills">
+                    <li class="bottomo-hover flex s-center items-center"><i class="fa-solid fa-code"></i></li>
+                </a>
+                <a href="#services">
+                    <li class="bottomo-hover flex s-center items-center">
+                        <i class="fa-solid fa-rocket"></i>
+                    </li>
+                </a>
+            </ul>
+
+        </div>
+    </section>
+
+    <!-- Home Section -->
+    <section id="home" class="flex s-around sw-80 m-auto">
+        <div class="home-left flex items-center">
+            <div class="home-content">
+                <h6 class="poppinss">Olá, me chamo</h6>
+                <h1 class="t-white">Brian Cerqueira</h1>
+                <h4 class="poppinss">Desenvolvedor Full Stack</h4> 
+            </div>
+        </div>
+        <div class="home-right flex s-center items-center">
+            <div class="circle flex s-center items-center" id="mainImage">
+                <img src="./imagens/avatar.png" alt="">
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h1 class="t-center my-2 t-white f-2"></h1>
+        <div class="about-container flex s-around "> 
+            <div class=" about-left flex s-center items-center">
+                <img src="https://images.vexels.com/media/users/3/261919/isolated/preview/27b5ceb2beaa87532f7ba898363efba8-palavra-em-negrito-do-programador.png" alt="" style="width: 50%;">
+            </div>
+
+            <div class="about-right flex">
+                <div class="about-content">
+                    <h1 class="t-white m-b-1 poppins">Brian Cerqueira</h1>
+                    <p class="t-white poppins">Um estudante de desenvolvimento web, buscando cada vez mais conhecimento.<br>
+                      Mente fresca e focada para ser cada vez melhor no que faço.</p>
+                    <a class="btn live poppins" id="hireme"
+                     href="https://www.linkedin.com/in/briancerqueira/"target="_blank">Fale comigo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h1 class="t-center my-2 t-white f-2">Habilidades : </h1>
+        <div class="services-container flex s-around h-50">
+        <div class=" skills-left flex s-center items-center">
+           
+        </div>
+
+        <div class="skills-right flex items-center">
+            <div class="skillss-container">
+
+                <div class="html bar p-relative"><span class="bar-content left t-white">HTML</span><span
+                        class="bar-content right-skills t-white">90%</span></div>
+                <div class="css bar p-relative"><span class="bar-content left t-white">CSS</span><span
+                        class="bar-content right-skills t-white">80%</span></div>
+                <div class="js bar p-relative"><span class="bar-content left t-white">JavaScript</span><span
+                        class="bar-content right-skills t-white">75%</span></div>
+                <div class="bootstrap bar p-relative"><span class="bar-content left t-white">Bootstrap</span><span
+                        class="bar-content right-skills t-white">50%</span></div>
+                <div class="reactjs bar p-relative"><span class="bar-content left t-white">ReactJs</span><span
+                        class="bar-content right-skills t-white">30%</span></div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <!-- Services Section -->
+    <section id="services">
+        <h1 class=" t-center my-2 t-white f-2">Serviços</h1>
+        <div class="services-container flex s-center">
+            <div class="test-item flex f-col items-center">
+                
+                <h1 class="t-white poppins">Desenvolvimento web</h1>
+                <p class="t-white poppins">
+                  Desenvolvimento Web está envolvido em todos os lugares. Todas as startups e todos os negócios têm seus próprios sites. Como minha paixão, vou ajudá-lo a construir seu site limpo e rápido para sua startup ou seu negócio.</p>
+            </div>
+            <div class="test-item flex f-col items-center">
+                
+                <h1 class="t-white poppins">Manejamento de mídia social</h1>
+                <p class="t-white poppins">
+                  A mídia social é o poder do futuro e do nosso presente. Com minhas habilidades, irei te proporcionar uma experiencia incrível nas suas redes sociais, iremos alavancar ela de uma forma que fique proporcional ao que o mercado pede.</p>
+            </div>
+            <div class="test-item flex f-col items-center">
+                
+                <h1 class="t-white poppins">Estratégias de crescimento</h1>
+                <p class="t-white poppins">
+                  Como desenvolvedor web também ajudarei sua marca a crescer. Vou fornecer as estratégias de crescimento para sua marca. E também ajudar na busca de técnicas para alavancar a sua marca.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h1 class=" t-center my-2 t-white f-2">Projetos</h1>
+        <div class="projects-container flex s-center">
+            <div class="projects-item flex f-col s-center items-center">
+                <div class="image-container p-one">
+                    
+                </div>
+                <h1 class="t-white poppins">Cifra de César</h1>
+                <p class="t-white poppins">Sistema de criptografia, também conhecida como cífra de troca. É um dos sistemas de criptografia mais conhecidos. </p>
+                <div class="buttons flex s-around">
+                    <a href="https://github.com/briancerqueira/Projeto-Individual-Modulo-2" target="_blanks"
+                        class="btn mx-1 m-top">GitHub</a>
+                    <a href="https://briancerqueira.github.io/Projeto-Individual-Modulo-2/" target="_blanks" class="btn m-top live">Veja aqui!</a>
+                </div>
+            </div>
+            <div class="projects-item flex f-col s-center items-center">
+                <div class="image-container p-one">
+                   
+                </div>
+                <h1 class="t-white poppins">Servidor json</h1>
+                <p class="t-white poppins">Sistema de interaçao com o usuário, partindo para parte de front-end. Com o servidor json, podemos fazer uma simulaçao de um banco de dados.</p>
+                <div class="buttons flex s-around">
+                    <a href="https://github.com/briancerqueira/Projeto-Individual-Modulo3-Resilia-" target="_blanks"
+                        class="btn mx-1 m-top">GitHub</a>
+                    <a href=" https://json-server-ztu8.onrender.com/" target="_blanks" class="btn m-top live">Veja aqui!</a>
+                </div>
+            </div>
+            <div class="projects-item flex f-col s-center items-center">
+                <div class="image-container p-two">
+                    
+                </div>
+
+                <h1 class="t-white poppins">Patch Studio 2077</h1>
+                <p class="t-white poppins">Modelo do projeto da plataforma de ensino Resilia. Feito com o objetivo de por em prática nossa habilidade em JavaScript, CSS e HMTL.</sp>
+                <div class="buttons flex s-around">
+                    <a href="https://github.com/nayanesouza40/projeto_squad4" target="_blank"
+                        class="btn mx-1 m-top">GitHub</a>
+                    <a href="https://nayanesouza40.github.io/projeto_squad4/" target="_blank"
+                        class="btn m-top live">Veja aqui!</a>
+                </div>
+            </div>
+            <div class="projects-item flex f-col s-center items-center">
+                <div class="image-container p-three">
+                    
+                </div>
+
+                <h1 class="t-white poppins">Imobiliária Dreams</h1>
+                <p class="t-white poppins">Projeto foi realizado utilizando React. Realizado com o objetivo de termos um servidor com a capacidade de editar, remover, adicionar e cadastrar usuário, tendo interaçao com o banco de dados.</p>
+                <div class="buttons flex s-around">
+                    <a href="https://github.com/Opseua/M3-GRU_Sendo-Servido" target="_blank"
+                        class="btn mx-1 m-top">GitHub</a>
+                    <a href="https://m3-gru-sendo-servido.netlify.app/" target="_blank" class="btn m-top live">Veja aqui!</a>
+                </div>
+            </div>
+            <div class="projects-item flex f-col s-center items-center">
+                <div class="image-container p-three">
+                    
+                </div>
+
+                <h1 class="t-white poppins">Programadores Cariocas</h1>
+                <p class="t-white poppins">Sendo o último módulo da Resilia, recriamos o site dos Programadores Cariocas que os usuarios relatavam bugs, erros e etc. Otimizamos para que o site ficasse navegável e útil.</p>
+                <div class="buttons flex s-around">
+                    <a href="https://github.com/FellyBrasil/Projeto-Em-Grupo-Final" target="_blank"
+                        class="btn mx-1 m-top">GitHub</a>
+                    <a href="https://github.com/FellyBrasil/Projeto-Em-Grupo-Final" target="_blank" class="btn m-top live">Veja aqui!</a>
+                        
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Me Section -->
+    <section id="contact" class="m-b-1">
+        <h1 class=" t-center my-2 t-white f-2">Entre em contato!</h1>
+        <div class="contact-container flex s-around items-centers">
+            <div class="form" id="contactForm">
+                <form action="" id="contactFrom">
+                    <div class="name form-div">
+                        <input type="text" name="name" id="name" class="poppins" placeholder="Seu nome">
+                    </div>
+                    <div class="email form-div">
+                        <input type="email" name="email" id="email" class="poppins" placeholder="Seu email"
+                            required>
+                    </div>
+                    <div class="phone form-div">
+                        <input type="phone" name="phone" id="phone" class="poppins" placeholder="Seu número de celular"
+                            required>
+                    </div>
+                    <div class="textarea form-div">
+                        <textarea name="text" id="textarea" cols="30" rows="10" class="poppins"
+                            placeholder="Sua mensagem"></textarea>
+                    </div>
+                    <button type="submit" class="btn poppins" id="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    
+    <footer id="footer">
+        <ul class="flex s-center w-80 m-auto my-2 res">
+            <li><a href="#home" class="poppinss">Home</a></li>
+            <li><a href="#about" class="poppinss">Sobre</a></li>
+            <li><a href="#skills" class="poppinss">Habilidades</a></li>
+            <li><a href="#projects" class="poppinss">Projetos</a></li>
+        </ul>
+        <ul class="flex s-center w-80 font-awesome ">
+            <a href="https://www.linkedin.com/in/briancerqueira/" target="_blank">
+                <li><i class="fa-brands fa-linkedin-in"></i></li>
+            </a>
+            <a href="https://github.com/briancerqueira" target="_blank">
+                <li><i class="fa-brands fa-github"></i></li>
+            </a>
+            <a href="https://www.instagram.com/eubrian09/" target="_blank">
+                <li><i class="fa-brands fa-instagram"></i></li>
+            </a>
+            <a href="https://www.youtube.com/channel/UCUCvqj6YeG5l5839dFPtUgA" target="_blank">
+                <li><i class="fa-brands fa-youtube"></i></li>
+            </a>
+        </ul>
+        <p class="t-center my-2 poppins">&copy; Todos direitos reservados 2023 -  <span class="cpy-white poppins">Brian Cerqueira</span></p>
+
+    </footer>
+
+    <div id="scroll-top" onclick="scrolltop()">
+        <span><i class="fa-solid fa-arrow-up"></i></span>
+    </div>
+
+</body>
+<script>
+    function scrolltop() {
+        let a = window.document;
+        a = location.href = '#home';
+    }
+    let contact = document.getElementById('contactForm');
+    contact.addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert(`Obrigado pelo seu feedback! Em cerca de 24 horas retornarei com uma resposta. :)`);
+    })
+</script>
+
+</html>
