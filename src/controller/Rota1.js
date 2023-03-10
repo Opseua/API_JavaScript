@@ -61,7 +61,7 @@ const Rota1 = {
 
 
         if (!responseSent) {
-          res.type('txt').send(`${ res_api }${ bl }${ bl }${ res_run }`);
+          res.type('txt').send(`${res_api}${bl}${bl}${res_run}`);
           responseSent = true;
         }
 
@@ -87,10 +87,10 @@ const Rota1 = {
               redirect: 'follow'
             };
 
-/*             fetch("https://ntfy.sh/OPSEUA", requestOptions)
-              .then(response => response.text())
-              .then(result => console.log(result))
-              .catch(error => console.log('error', error)); */
+            /* fetch("https://ntfy.sh/OPSEUA", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error)); */
 
 
 
@@ -105,7 +105,7 @@ const Rota1 = {
             /* res.type('txt').json(`${res_api}${bl}${bl}${res_run}`); */
 
             if (!responseSent) {
-              res.type('txt').send(`${ res_api }${ bl }${ bl }${ res_run }`);
+              res.type('txt').send(`${res_api}${bl}${bl}${res_run}`);
               responseSent = true;
             }
 
