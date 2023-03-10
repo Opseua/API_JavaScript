@@ -64,8 +64,8 @@ const Rota1 = {
               .catch(error => console.error(error)); */
 
 
-
-            const dataString = JSON.stringify(resultado);
+            const data = { nome: 'Maria', idade: 25 };
+            const dataString = JSON.stringify(data);
             axios.post('https://ntfy.sh/OPSEUA', dataString, {
               headers: {
                 'Content-Type': 'application/json',
