@@ -60,10 +60,9 @@ const Rota1 = {
         /* res.type('txt').json(`${res_api}${bl}${bl}${res_run}`); */
 
 
-        if (!responseSent) {
+      
           res.type('txt').send(`${res_api}${bl}${bl}${res_run}`);
-          responseSent = true;
-        }
+   
 
         Run.Script1(req.body)
           .then((resultado) => {
@@ -104,10 +103,9 @@ const Rota1 = {
             const res_api = `<script>Script1</script>${bl}<status>ERRO</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>${bl}<body>VAZIO-[0]</body>`;
             /* res.type('txt').json(`${res_api}${bl}${bl}${res_run}`); */
 
-            if (!responseSent) {
+        
               res.type('txt').send(`${res_api}${bl}${bl}${res_run}`);
-              responseSent = true;
-            }
+     
 
             return
           });
