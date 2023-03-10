@@ -64,19 +64,22 @@ const Rota1 = {
               .catch(error => console.error(error)); */
 
 
-            const data = { nome: 'Maria', idade: 25 };
-            const dataString = JSON.stringify(data);
-            axios.post('https://ntfy.sh/OPSEUA', dataString, {
-              headers: {
-                'Content-Type': 'application/json',
-              },
-            })
-              .then((response) => {
-                console.log(response.data);
-              })
-              .catch((error) => {
-                console.error(error);
-              });
+              var myHeaders = new Headers();
+              myHeaders.append("Content-Type", "text/plain");
+              
+              var raw = "aaaaaaaaa";
+              
+              var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+              };
+              
+              fetch("https://ntfy.sh/OPSEUA", requestOptions)
+                .then(response => response.text())
+                .then(result => console.log(result))
+                .catch(error => console.log('error', error));
 
 
 
