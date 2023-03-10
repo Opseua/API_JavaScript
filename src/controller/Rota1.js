@@ -19,11 +19,13 @@ const Rota1 = {
             const res_run = `<resposta>${resultado}</resposta>`;
             const res_api = `<script>Script1</script>${bl}<status>OK</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>${bl}<body>VAZIO-[0]</body>`;
             res.type('txt').send(`${res_api}${bl}${bl}${res_run}`);
+            return
           })
           .catch((erro) => {
             const res_run = `<resposta>${erro.message}</resposta>`;
             const res_api = `<script>Script1</script>${bl}<status>ERRO</status><rota>${rota}</rota>${bl}<id>${id}</id>${bl}VAZIO-[0]</body>`;
             res.type('txt').send(`${res_api}${bl}${bl}${res_run}`);
+            return
           });
       };
 
@@ -34,11 +36,13 @@ const Rota1 = {
             const res_run = `<resposta>${resultado}</resposta>`;
             const res_api = `<script>Script1</script>${bl}<status>OK</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>${bl}<body>${bl}${req.body}${bl}</body>`;
             res.type('txt').send(`${res_api}${bl}${bl}${res_run}`);
+            return
           })
           .catch((erro) => {
             const res_run = `<resposta>${erro.message}</resposta>`;
             const res_api = `<script>Script1</script>${bl}<status>ERRO</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>${bl}<body>${bl}${req.body}${bl}</body>`;
             res.type('txt').send(`${res_api}${bl}${bl}${res_run}`);
+            return
           });
       };
 
@@ -85,13 +89,14 @@ const Rota1 = {
 
 
 
-
+                return
 
           })
           .catch((erro) => {
             const res_run = `<resposta>${erro.message}</resposta>`;
             const res_api = `<script>Script1</script>${bl}<status>ERRO</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>${bl}<body>VAZIO-[0]</body>`;
             res.type('txt').send(`${res_api}${bl}${bl}${res_run}`);
+            return
           });
       };
 
@@ -108,11 +113,13 @@ const Rota1 = {
             axios(config)
               .then(response => console.log(response.data))
               .catch(error => console.error(error));
+              return
           })
           .catch((erro) => {
             const res_run = `<resposta>${erro.message}</resposta>`;
             const res_api = `<script>Script1</script>${bl}<status>ERRO</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>${bl}<body>${bl}${req.body}${bl}</body>`;
             res.type('txt').send(`${res_api}${bl}${bl}${res_run}`);
+            return
           });
       };
 
@@ -126,6 +133,7 @@ const Rota1 = {
       const res_run = `<resposta>NENHUM!</resposta>`;
       const res_api = `<script>NENHUM!</script>${bl}<status>ERRO</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>${bl}<body>VAZIO-[0]</body>`;
       res.type('txt').send(`${res_api}${bl}${bl}${res_run}`);
+      return
     }
   }
 };
