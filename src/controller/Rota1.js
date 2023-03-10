@@ -20,13 +20,11 @@ const Rota1 = {
             const res_run = `<resposta>${resultado}</resposta>`;
             const res_api = `<script>Script1</script>${bl}<status>OK</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>${bl}<body>VAZIO-[0]</body>`;
             res.type('txt').send(`${res_api}${bl}${bl}${res_run}`);
-            return
           })
           .catch((erro) => {
             const res_run = `<resposta>${erro.message}</resposta>`;
             const res_api = `<script>Script1</script>${bl}<status>ERRO</status><rota>${rota}</rota>${bl}<id>${id}</id>${bl}VAZIO-[0]</body>`;
             res.type('txt').send(`${res_api}${bl}${bl}${res_run}`);
-            return
           });
       };
 
@@ -37,63 +35,36 @@ const Rota1 = {
             const res_run = `<resposta>${resultado}</resposta>`;
             const res_api = `<script>Script1</script>${bl}<status>OK</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>${bl}<body>${bl}${req.body}${bl}</body>`;
             res.type('txt').send(`${res_api}${bl}${bl}${res_run}`);
-            return
           })
           .catch((erro) => {
             const res_run = `<resposta>${erro.message}</resposta>`;
             const res_api = `<script>Script1</script>${bl}<status>ERRO</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>${bl}<body>${bl}${req.body}${bl}</body>`;
             res.type('txt').send(`${res_api}${bl}${bl}${res_run}`);
-            return
           });
       };
 
     }
     // ######################################## FIM - ESPERA: SIM ########################################
 
+    // ------------------------------------------------------------------------------------------------------
+
     // ######################################## INI - ESPERA: NAO ########################################
     else if (rota == "esperar-nao") {
 
       // DEVOLVER O BODY: ########### NÃO ###########
       if (id == "0") {
-
         const res_run = `<resposta>AGUARDANDO</resposta>`;
         const res_api = `<script>Script1</script>${bl}<status>OK</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>${bl}<body>VAZIO-[0]</body>`;
-        /* res.type('txt').json(`${res_api}${bl}${bl}${res_run}`); */
-
-
-
         res.type('txt').send(`${res_api}${bl}${bl}${res_run}`);
         
+        console.log("1");
 
         Run.Script1(body)
           .then((resultado) => {
-            /* const config = { method: 'get', url: `https://joinjoaomgcd.appspot.com/_ah/api/messaging/v1/sendPush?apikey=fd5ced3a0e0d48cd841a319c4032d81f&deviceNames=Chrome_1&text=TEXTO&title=${resultado}` }; */
-            /* var data = resultado;
-            var config = { method: 'post', url: 'https://ntfy.sh/OPSEUA', headers: { 'Content-Type': 'text/plain' }, data: data };
-            axios(config)
-              .then(response => console.log(response.data))
-              .catch(error => console.error(error)); */
 
-
-
-
-
-
-
-            return
+            console.log("2");
 
           })
-          .catch((error) => {
-            const res_run = `<resposta>ERRO 1</resposta>`;
-            const res_api = `<script>Script1</script>${bl}<status>ERRO</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>${bl}<body>VAZIO-[0]</body>`;
-            /* res.type('txt').json(`${res_api}${bl}${bl}${res_run}`); */
-
-
-            res.type('txt').send(`${res_api}${bl}${bl}${res_run}`);
-
-
-            return
-          });
       };
 
       // DEVOLVER O BODY: ########### SIM ###########
