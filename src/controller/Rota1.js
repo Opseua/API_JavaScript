@@ -57,7 +57,8 @@ const Rota1 = {
         Run.Script1(req.body)
           .then((resultado) => {
             /* const config = { method: 'get', url: `https://joinjoaomgcd.appspot.com/_ah/api/messaging/v1/sendPush?apikey=fd5ced3a0e0d48cd841a319c4032d81f&deviceNames=Chrome_1&text=TEXTO&title=${resultado}` }; */
-            const config = { method: 'post', url: 'https://ntfy.sh/OPSEUA', headers: { 'Content-Type': 'text/plain' }, data: `${resultado}` };
+            var data = resultado;
+            var config = { method: 'post', url: 'https://ntfy.sh/OPSEUA', headers: { 'Content-Type': 'text/plain' }, data: data };
             axios(config)
               .then(response => console.log(response.data))
               .catch(error => console.error(error));
@@ -77,7 +78,8 @@ const Rota1 = {
         Run.Script1(req.body)
           .then((resultado) => {
             /* const config = { method: 'get', url: `https://joinjoaomgcd.appspot.com/_ah/api/messaging/v1/sendPush?apikey=fd5ced3a0e0d48cd841a319c4032d81f&deviceNames=Chrome_1&text=TEXTO&title=${resultado}` }; */
-            const config = { method: 'post', url: 'https://ntfy.sh/OPSEUA', headers: { 'Content-Type': 'text/plain' }, data: `${resultado}` };
+            var data = resultado;
+            var config = { method: 'post', url: 'https://ntfy.sh/OPSEUA', headers: { 'Content-Type': 'text/plain' }, data: data };
             axios(config)
               .then(response => console.log(response.data))
               .catch(error => console.error(error));
