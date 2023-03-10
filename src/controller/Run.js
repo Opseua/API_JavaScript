@@ -1,3 +1,5 @@
+const axios = require('axios');
+
 const Run = {
 
     Teste1: async (inf1) => {
