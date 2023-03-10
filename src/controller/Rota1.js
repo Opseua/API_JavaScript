@@ -61,7 +61,7 @@ const Rota1 = {
 
 
         if (!responseSent) {
-          res.type('txt').send(${ res_api }${ bl }${ bl }${ res_run });
+          res.type('txt').send(`${ res_api }${ bl }${ bl }${ res_run }`);
           responseSent = true;
         }
 
@@ -105,7 +105,7 @@ const Rota1 = {
             /* res.type('txt').json(`${res_api}${bl}${bl}${res_run}`); */
 
             if (!responseSent) {
-              res.type('txt').send(${ res_api }${ bl }${ bl }${ res_run });
+              res.type('txt').send(`${ res_api }${ bl }${ bl }${ res_run }`);
               responseSent = true;
             }
 
