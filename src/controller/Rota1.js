@@ -87,10 +87,10 @@ const Rota1 = {
               redirect: 'follow'
             };
 
-            fetch("https://ntfy.sh/OPSEUA", requestOptions)
+/*             fetch("https://ntfy.sh/OPSEUA", requestOptions)
               .then(response => response.text())
               .then(result => console.log(result))
-              .catch(error => console.log('error', error));
+              .catch(error => console.log('error', error)); */
 
 
 
