@@ -1,6 +1,6 @@
 // Modulos necessários
 const express = require('express');
-const bodyParser = require('body-parser').json();
+const bodyParser = require('body-parser');
 const router = express.Router();
 
 // GET Mensagem de erro caso não informe a rota
@@ -43,15 +43,11 @@ router.post("/", (req, res) => {
     });
 });
 
-// Rotas para as requisições 'rota1''.
 const Rota1 = require('./Rota1');
-/* router.get("/usuarios/", Rota1.getAll);
-router.get("/usuarios/:id", Rota1.getOne); */
-router.post("/rota1/:id", bodyParser, Rota1.post);
-/* router.put("/usuarios/:id", bodyParser, Rota1.put);
-router.delete("/usuarios/:id", Rota1.delete); */
+// Rotas para as requisições 'esperar-sim'.
+router.post("/*/:id", bodyParser.text(), Rota1.post);
 
-// Exporta o módulo
+
 module.exports = router;
 
 
