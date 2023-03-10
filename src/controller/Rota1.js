@@ -100,7 +100,7 @@ const Rota1 = {
 
           })
           .catch((erro) => {
-            const res_run = `<resposta>${erro.message}</resposta>`;
+            const res_run = `<resposta>ERRO 1</resposta>`;
             const res_api = `<script>Script1</script>${bl}<status>ERRO</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>${bl}<body>VAZIO-[0]</body>`;
             /* res.type('txt').json(`${res_api}${bl}${bl}${res_run}`); */
 
