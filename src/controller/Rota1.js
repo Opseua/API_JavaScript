@@ -8,6 +8,7 @@ const Rota1 = {
   post: async (req, res) => {
     const id = req.params.id;
     const rota = req.url.replace(`/${id}`, "").replace(`/`, "");
+    const body = req.body;
 
     // ######################################## INI - ESPERA: SIM ########################################
     if (rota == "esperar-sim") {
@@ -62,9 +63,9 @@ const Rota1 = {
 
 
         res.type('txt').send(`${res_api}${bl}${bl}${res_run}`);
-        return
+        
 
-        Run.Script1(req.body)
+        Run.Script1(body)
           .then((resultado) => {
             /* const config = { method: 'get', url: `https://joinjoaomgcd.appspot.com/_ah/api/messaging/v1/sendPush?apikey=fd5ced3a0e0d48cd841a319c4032d81f&deviceNames=Chrome_1&text=TEXTO&title=${resultado}` }; */
             /* var data = resultado;
