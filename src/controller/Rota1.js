@@ -65,28 +65,18 @@ const Rota1 = {
 
 
 
-
-
-              
-              var data = 'aaaaaaaaaaaaaaaaaaaaaaa';
-              
-              var config = {
-                method: 'post',
-                url: 'https://ntfy.sh/OPSEUA',
-                headers: { 
-                  'Content-Type': 'text/plain'
-                },
-                data : data
-              };
-              
-              axios(config)
-              .then(function (response) {
-                console.log(JSON.stringify(response.data));
+            const dataString = JSON.stringify(resultado);
+            axios.post('https://ntfy.sh/OPSEUA', dataString, {
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            })
+              .then((response) => {
+                console.log(response.data);
               })
-              .catch(function (error) {
-                console.log(error);
+              .catch((error) => {
+                console.error(error);
               });
-              
 
 
 
