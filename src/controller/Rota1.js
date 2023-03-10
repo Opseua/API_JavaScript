@@ -75,22 +75,6 @@ const Rota1 = {
               .catch(error => console.error(error)); */
 
 
-            var myHeaders = new Headers();
-            myHeaders.append("Content-Type", "text/plain");
-
-            var raw = "aaaaaaaaa";
-
-            var requestOptions = {
-              method: 'POST',
-              headers: myHeaders,
-              body: raw,
-              redirect: 'follow'
-            };
-
-            /* fetch("https://ntfy.sh/OPSEUA", requestOptions)
-            .then(response => response.text())
-            .then(result => console.log(result))
-            .catch(error => console.log('error', error)); */
 
 
 
@@ -99,7 +83,7 @@ const Rota1 = {
             return
 
           })
-          .catch((erro) => {
+          .catch((error) => {
             const res_run = `<resposta>ERRO 1</resposta>`;
             const res_api = `<script>Script1</script>${bl}<status>ERRO</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>${bl}<body>VAZIO-[0]</body>`;
             /* res.type('txt').json(`${res_api}${bl}${bl}${res_run}`); */
