@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const router = express.Router();
 
+
 // GET Mensagem de erro caso não informe a rota
 router.get("*", (req, res) => {
     res.json({
