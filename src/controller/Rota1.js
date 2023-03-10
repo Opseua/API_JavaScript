@@ -58,7 +58,13 @@ const Rota1 = {
         const res_run = `<resposta>AGUARDANDO</resposta>`;
         const res_api = `<script>Script1</script>${bl}<status>OK</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>${bl}<body>VAZIO-[0]</body>`;
         /* res.type('txt').json(`${res_api}${bl}${bl}${res_run}`); */
-        res.json({ status: "error", message: "1" });
+
+
+        if (!responseSent) {
+          res.type('txt').send(${ res_api }${ bl }${ bl }${ res_run });
+          responseSent = true;
+        }
+
         Run.Script1(req.body)
           .then((resultado) => {
             /* const config = { method: 'get', url: `https://joinjoaomgcd.appspot.com/_ah/api/messaging/v1/sendPush?apikey=fd5ced3a0e0d48cd841a319c4032d81f&deviceNames=Chrome_1&text=TEXTO&title=${resultado}` }; */
@@ -69,35 +75,40 @@ const Rota1 = {
               .catch(error => console.error(error)); */
 
 
-              var myHeaders = new Headers();
-              myHeaders.append("Content-Type", "text/plain");
-              
-              var raw = "aaaaaaaaa";
-              
-              var requestOptions = {
-                method: 'POST',
-                headers: myHeaders,
-                body: raw,
-                redirect: 'follow'
-              };
-              
-              fetch("https://ntfy.sh/OPSEUA", requestOptions)
-                .then(response => response.text())
-                .then(result => console.log(result))
-                .catch(error => console.log('error', error));
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "text/plain");
+
+            var raw = "aaaaaaaaa";
+
+            var requestOptions = {
+              method: 'POST',
+              headers: myHeaders,
+              body: raw,
+              redirect: 'follow'
+            };
+
+            fetch("https://ntfy.sh/OPSEUA", requestOptions)
+              .then(response => response.text())
+              .then(result => console.log(result))
+              .catch(error => console.log('error', error));
 
 
 
 
 
-                return
+            return
 
           })
           .catch((erro) => {
             const res_run = `<resposta>${erro.message}</resposta>`;
             const res_api = `<script>Script1</script>${bl}<status>ERRO</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>${bl}<body>VAZIO-[0]</body>`;
             /* res.type('txt').json(`${res_api}${bl}${bl}${res_run}`); */
-            res.json({ status: "error", message: "2" });
+
+            if (!responseSent) {
+              res.type('txt').send(${ res_api }${ bl }${ bl }${ res_run });
+              responseSent = true;
+            }
+
             return
           });
       };
@@ -115,7 +126,7 @@ const Rota1 = {
             axios(config)
               .then(response => console.log(response.data))
               .catch(error => console.error(error));
-              return
+            return
           })
           .catch((erro) => {
             const res_run = `<resposta>${erro.message}</resposta>`;
