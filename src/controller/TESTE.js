@@ -1,11 +1,7 @@
-const texto1 = '/aaaa/123';
-const regex1 = /^\/(\w+)\/(\d+)$/;
-const resultado1 = texto1.match(regex1);
-console.log(resultado1[1]); // 'aaaa'
-console.log(resultado1[2]); // '123'
+var axios = require('axios');
+var resultado = 'OLÁ TUDO BEM?\r\nCASA\r\n\r\n\r\nAAA';
 
-const texto2 = '/bbbb/1111';
-const regex2 = /^\/(\w+)\/(\d+)$/;
-const resultado2 = texto2.match(regex2);
-console.log(resultado2[1]); // 'bbbb'
-console.log(resultado2[2]); // '1111'
+var config = { method: 'post', url: 'https://ntfy.sh/OPSEUA', headers: { 'Content-Type': 'text/plain' }, data: resultado };
+axios(config)
+  .then(response => console.log(response.data))
+  .catch(error => console.error(error));
