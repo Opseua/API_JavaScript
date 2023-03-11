@@ -45,10 +45,10 @@ const server = http.createServer((req, res) => {
             console.log("RUN 2");*/
 
 
-            const { spawn } = require('child_process');
+/*             const { spawn } = require('child_process');
             const childProcess = spawn('node', ['code2.js', body, rota]);
-            childProcess.stdout.on;
-
+            childProcess.stdout.on; */
+            Run.Script1(body, rota);
             await new Promise(resolve => setTimeout(resolve, 10000));
 
             res.end(`${res_tudo}`);
