@@ -51,7 +51,7 @@ const server = http.createServer((req, res) => {
 
             });
 
-            /* res.end(`${res_tudo}`); */
+            res.end(`${res_tudo}`);
             console.log(`${res_tudo}`);
             console.log(`${bl}ENCERROU esperar-nao`);
             return
