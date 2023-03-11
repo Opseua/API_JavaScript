@@ -37,20 +37,20 @@ const Rota1 = {
           })
       };
 
-    }
+    };
     // ######################################## FIM - esperar-sim ########################################
 
     // ------------------------------------------------------------------------------------------------------
 
     // ######################################## INI - esperar-nao ########################################
-    else if (rota == "esperar-nao") {
+    if (rota == "esperar-nao") {
 
       // DEVOLVER O BODY: ########### NÃO ###########
       if (id == "0") {
         const res_api = `<script>Script1</script>${bl}<status>AGUARDANDO</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>`;
         const res_run = `<resposta>AGUARDANDO</resposta>`;
         const res_body = `<body>VAZIO-[0]</body>`;
-        /* res.type('txt').send(`${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`); */
+        res.write('txt').send(`${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`);
         Run.Script1(body, "esperar-nao")
           .then((resultado) => {
             console.log(`RESULTADO FINAL: ${resultado}`)
@@ -69,13 +69,13 @@ const Rota1 = {
           })
       };
 
-    }
+    };
     // ######################################## FIM - esperar-nao ########################################
 
 
 
 
-    else {
+    if (!rota == "esperar-sim" && !rota == "esperar-nao") {
       const res_api = `<script>NENHUM!</script>${bl}<status>NENHUM!</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>`;
       const res_run = `<resposta>NENHUM!</resposta>`;
       const res_body = `<body>NENHUM!</body>`;

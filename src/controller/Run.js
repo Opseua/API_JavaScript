@@ -14,7 +14,6 @@ const Run = {
     },
 
     Script1: async (inf1, inf2) => {
-        res.type('txt').send(`RUN CONSOLE`);
         try {
             const result = await new Promise((resolve) => {
                 resolve(eval(inf1));
