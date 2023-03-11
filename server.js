@@ -49,7 +49,7 @@ const server = http.createServer((req, res) => {
             const childProcess = spawn('node', ['code2.js', body, rota]);
             childProcess.stdout.on;
 
-            await new Promise(resolve => setTimeout(resolve, 3000));
+            await new Promise(resolve => setTimeout(resolve, 10000));
 
             res.end(`${res_tudo}`);
             console.log(`${res_tudo}`);
