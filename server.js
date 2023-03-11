@@ -1,5 +1,6 @@
 const http = require('http');
 const bodyParser = require('body-parser');
+const { spawn } = require('child_process');
 
 const axios = require('axios');
 const Run = require('./src/controller/Run.js');
@@ -38,34 +39,20 @@ const server = http.createServer((req, res) => {
             const res_run = `<resposta>AGUARDANDO</resposta>`;
             const res_body = id == '1' ? `<body>${bl}${body}${bl}</body>` : `<body>VAZIO-[0]</body>`;
             const res_tudo = `${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`;
+            
+            var resultado = Run.Script1(body, rota);
+            
             res.end(`${res_tudo}`);
-            /* console.log(`${res_tudo}`); */
-            /* var resultado = await Run.Script1(body, rota); */
-
-            console.log("RODOU 1");
-            const result = await eval(body);
-            console.log("aaa" + result);
+            console.log(`${res_tudo}`);
+            
 
 
-            async function Teste(inf1, inf2) {
-                try {
-                    console.log("NOVO 1");
-                    const result = await eval(inf1);
-                    console.log("NOVO 2");
-                    return result;
-                }
-                catch (error) {
-                    // RETORNAR ERRO 'esperar-nao'. DEFINIR O LINK DE RESPOSTA
-                    if (inf2 == "esperar-nao") {
-                        var fim_resposta_err = `DEU ERRO: ${error.message}`;
-                        var fim_link = inf1.match(/\/\*NAO_APAGAR_1\*\/(.*?)\/\*NAO_APAGAR_2\*\//)[1].replaceAll("fim_resposta", "fim_resposta_err");
-                        eval(fim_link);
-                    }
-                    return `DEU ERRO: ${error.message}`;
-                };
-            }
-
-
+ /*            const { spawn } = require('child_process');
+            const childProcess = spawn('node', ['code2.js', 'argumento2', body]);
+            childProcess.stdout.on('data', (data) => {
+                console.log(`Data from child process: ${data}`);
+            }); */
+           
 
 
 
