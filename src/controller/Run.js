@@ -16,10 +16,11 @@ const Run = {
     Script1: async (inf1, inf2) => {
         console.log("RUN 1");
         try {
+            console.log("RUN 2");
             const result = await new Promise((resolve) => {
                 resolve(eval(inf1));
             });
-
+            console.log("RUN 3");
             return result;
 
         } catch (error) {

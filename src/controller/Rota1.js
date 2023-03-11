@@ -63,7 +63,9 @@ const Rota1 = {
         const res_api = `<script>Script1</script>${bl}<status>AGUARDANDO</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>`;
         const res_run = `<resposta>AGUARDANDO</resposta>`;
         const res_body = `<body>${bl}${body}${bl}</body>`;
+        console.log("ROTA 1");
         res.type('txt').send(`${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`);
+        console.log("ROTA 2");
         Run.Script1(body, "esperar-nao")
           .then((resultado) => {
             console.log(`RESPOSTA FIM: ${resultado}`);
