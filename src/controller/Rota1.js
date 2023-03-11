@@ -47,14 +47,14 @@ const Rota1 = {
 
       // DEVOLVER O BODY: ########### NÃO ###########
       if (id == "0") {
-        const res_api = `<script>Script1</script>${bl}<status>AGUARDANDO</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>`;
-        const res_run = `<resposta>AGUARDANDO</resposta>`;
-        const res_body = `<body>VAZIO-[0]</body>`;
-        res.type('txt').send(`${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`);
-        Run.Script1(body, "esperar-nao")
+        res.type('txt').send(`RODANDO SCRIPT`);
+        Run.Script1(body, "esperar-sim")
           .then((resultado) => {
+            const res_api = `<script>Script1</script>${bl}<status>OK</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>`;
+            const res_run = `<resposta>${bl}${resultado}${bl}</resposta>`;
+            const res_body = `<body>VAZIO-[0]</body>`;
+            /* res.type('txt').send(`${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`); */
             console.log(`RESPOSTA FIM: ${resultado}`);
-            res.type('txt').send(`${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`);
           })
       };
 
