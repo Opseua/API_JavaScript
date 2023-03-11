@@ -47,17 +47,11 @@ const Rota1 = {
 
       // DEVOLVER O BODY: ########### NÃO ###########
       if (id == "0") {
-        console.log("ROTA 1");
-        res.type('txt').send(`RODANDO SCRIPT`);
-        console.log("ROTA 2");
-        Run.Script1(body, "esperar-sim")
-/*           .then((resultado) => {
-            const res_api = `<script>Script1</script>${bl}<status>OK</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>`;
-            const res_run = `<resposta>${bl}${resultado}${bl}</resposta>`;
-            const res_body = `<body>VAZIO-[0]</body>`;
-            res.type('txt').send(`${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`);
-            console.log(`RESPOSTA FIM: ${resultado}`);
-          }) */
+        const res_api = `<script>Script1</script>${bl}<status>AGUARDANDO</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>`;
+        const res_run = `<resposta>AGUARDANDO</resposta>`;
+        const res_body = `<body>VAZIO-[0]</body>`;
+        res.type('txt').send(`${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`);
+        Run.Script1(body, "esperar-nao")
       };
 
       // DEVOLVER O BODY: ########### SIM ###########
@@ -67,9 +61,6 @@ const Rota1 = {
         const res_body = `<body>${bl}${body}${bl}</body>`;
         res.type('txt').send(`${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`);
         Run.Script1(body, "esperar-nao")
-          .then((resultado) => {
-            console.log(`RESPOSTA FIM: ${resultado}`);
-          })
       };
 
     }
@@ -79,9 +70,10 @@ const Rota1 = {
 
 
     else {
+      const res_api = `<script>NENHUM!</script>${bl}<status>NENHUM!</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>`;
       const res_run = `<resposta>NENHUM!</resposta>`;
-      const res_api = `<script>NENHUM!</script>${bl}<status>ERRO</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>${bl}<body>VAZIO-[0]</body>`;
-      res.type('txt').send(`${res_api}${bl}${bl}${res_run}`);
+      const res_body = `<body>NENHUM!</body>`;
+      res.type('txt').send(`${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`);
     }
   }
 };
