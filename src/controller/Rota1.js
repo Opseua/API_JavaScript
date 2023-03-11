@@ -54,6 +54,7 @@ const Rota1 = {
         Run.Script1(body, "esperar-nao")
           .then((resultado) => {
             console.log(`RESPOSTA FIM: ${resultado}`);
+            res.type('txt').send(`${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`);
           })
       };
 

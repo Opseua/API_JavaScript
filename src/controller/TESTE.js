@@ -1,8 +1,6 @@
-            // RETORNAR RESPOSTA 'esperar-nao'
-            if (inf2 == "esperar-nao") {
+const fetch_body = `FETCH 1`;
 
-            }
-            else {
-                // RETORNAR RESPOSTA 'esperar-sim'
-                return `DEU ERRO: ${error.message}`
-            }
+fetch("https://ntfy.sh/OPSEUA", { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: fetch_body })
+    .then(response => response.json())
+    .then(data => console.log("fetch: OK"))
+    .catch(error => console.error("fetch: ERRO"))
