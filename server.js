@@ -47,9 +47,7 @@ const server = http.createServer((req, res) => {
 
             const { spawn } = require('child_process');
             const childProcess = spawn('node', ['code2.js', body, rota]);
-            childProcess.stdout.on('data', (data) => {
-
-            });
+            childProcess.stdout.on;
 
             res.end(`${res_tudo}`);
             console.log(`${res_tudo}`);
