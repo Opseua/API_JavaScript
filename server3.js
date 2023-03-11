@@ -40,8 +40,9 @@ const server = http.createServer((req, res) => {
             const res_body = id == '1' ? `<body>${bl}${body}${bl}</body>` : `<body>VAZIO-[0]</body>`;
             const res_tudo = `${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`;
             console.log(res_run);
-            res.writeHead(200, { 'Content-Type': 'text/plain' });
-            res.end(`${res_tudo}`);
+/*             res.writeHead(200, { 'Content-Type': 'text/plain' });
+            res.end(`${res_tudo}`); */
+            res.write(res_run);
             var resultado = await Run.Script1(body, rota);
             console.log(`${bl}ENCERROU esperar-nao`);
             return
