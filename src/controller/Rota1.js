@@ -20,8 +20,8 @@ const Rota1 = {
             const res_api = `<script>Script1</script>${bl}<status>OK</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>`;
             const res_run = `<resposta>${bl}${resultado}${bl}</resposta>`;
             const res_body = `<body>VAZIO-[0]</body>`;
+            console.log(`RESULTADO FINAL: ${resultado}`)
             res.type('txt').send(`${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`);
-            console.log(`RESPOSTA FIM: ${resultado}`);
           })
       };
 
@@ -32,8 +32,8 @@ const Rota1 = {
             const res_api = `<script>Script1</script>${bl}<status>OK</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>`;
             const res_run = `<resposta>${bl}${resultado}${bl}</resposta>`;
             const res_body = `<body>${bl}${body}${bl}</body>`;
+            console.log(`RESULTADO FINAL: ${resultado}`)
             res.type('txt').send(`${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`);
-            console.log(`RESPOSTA FIM: ${resultado}`);
           })
       };
 
@@ -52,6 +52,9 @@ const Rota1 = {
         const res_body = `<body>VAZIO-[0]</body>`;
         res.type('txt').send(`${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`);
         Run.Script1(body, "esperar-nao")
+          .then((resultado) => {
+            console.log(`RESULTADO FINAL: ${resultado}`)
+          })
       };
 
       // DEVOLVER O BODY: ########### SIM ###########
@@ -61,6 +64,9 @@ const Rota1 = {
         const res_body = `<body>${bl}${body}${bl}</body>`;
         res.type('txt').send(`${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`);
         Run.Script1(body, "esperar-nao")
+          .then((resultado) => {
+            console.log(`RESULTADO FINAL: ${resultado}`)
+          })
       };
 
     }
@@ -74,6 +80,7 @@ const Rota1 = {
       const res_run = `<resposta>NENHUM!</resposta>`;
       const res_body = `<body>NENHUM!</body>`;
       res.type('txt').send(`${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`);
+      console.log(`RESULTADO FINAL: NENHUM!`)
     }
   }
 };
