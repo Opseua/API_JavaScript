@@ -1,10 +1,5 @@
-// Código principal
-const { fork } = require('child_process');
+const Rota1 = require('./Rota1');
 
-const child = fork('./src/controller/UseState2.js');
-
-child.on('message', message => {
-  console.log(`Recebido do processo filho: ${message}`);
-});
-
-child.send('Iniciar');
+function MinhaFuncao() {
+  Rota1.res.type('txt').send('Hello World!'); // Utilizando o objeto "res" disponibilizado pelo objeto "Rota1"
+}
