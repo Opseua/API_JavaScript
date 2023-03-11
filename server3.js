@@ -22,6 +22,9 @@ const server = http.createServer((req, res) => {
                 console.log('INICIO 3'); */
 
         if (rota == "esperar-sim") {
+
+            console.log("NODE VERSION: " + process.version);
+
             var resultado = await Run.Script1(body, rota);
             const res_api = `<script>Script1</script>${bl}<status>OK</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>`;
             const res_run = `<resposta>${bl}${resultado}${bl}</resposta>`;
