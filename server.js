@@ -39,27 +39,22 @@ const server = http.createServer((req, res) => {
             const res_run = `<resposta>AGUARDANDO</resposta>`;
             const res_body = id == '1' ? `<body>${bl}${body}${bl}</body>` : `<body>VAZIO-[0]</body>`;
             const res_tudo = `${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`;
-            
-            console.log("RUN 1");
+
+            /*console.log("RUN 1");
             var resultado = Run.Script1(body, rota);
-            console.log("RUN 2");
-            
+            console.log("RUN 2");*/
+
+
+            const { spawn } = require('child_process');
+            const childProcess = spawn('node', ['code2.js', body, rota]);
+            childProcess.stdout.on('data', (data) => {
+                const resultado = data.toString().trim();
+                console.log(`${resultado}`);
+            });
+
             res.end(`${res_tudo}`);
             console.log(`${res_tudo}`);
-            
-
-
- /*            const { spawn } = require('child_process');
-            const childProcess = spawn('node', ['code2.js', 'argumento2', body]);
-            childProcess.stdout.on('data', (data) => {
-                console.log(`Data from child process: ${data}`);
-            }); */
-           
-
-
-
-
-            /* console.log(`${bl}ENCERROU esperar-nao`); */
+            console.log(`${bl}ENCERROU esperar-nao`);
             return
         };
 
