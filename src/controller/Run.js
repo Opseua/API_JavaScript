@@ -14,6 +14,7 @@ const Run = {
     },
 
     Script1: async (inf1, inf2) => {
+        console.log("RUN 1");
         try {
             const result = await new Promise((resolve) => {
                 resolve(eval(inf1));
