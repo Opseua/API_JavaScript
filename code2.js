@@ -1,6 +1,8 @@
 async function Api(inf1, inf2) {
     try {
+        console.log("OUTRO PROCESSO 1");
         const result = await eval(inf1);
+        console.log("OUTRO PROCESSO 2");
         return process.stdout.write(`${result}`);
     }
     catch (error) {
