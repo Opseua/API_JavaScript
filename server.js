@@ -41,8 +41,8 @@ const server = http.createServer((req, res) => {
             childProcess.stdout.on;
 
             res.end(`${res_tudo}`);
-            console.log(`${res_tudo}`);
-            console.log(`${bl}ENCERROU esperar-nao`);
+/*             console.log(`${res_tudo}`);
+            console.log(`${bl}ENCERROU esperar-nao`); */
             return;
         };
 
