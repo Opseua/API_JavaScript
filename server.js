@@ -40,7 +40,9 @@ const server = http.createServer((req, res) => {
             const res_body = id == '1' ? `<body>${bl}${body}${bl}</body>` : `<body>VAZIO-[0]</body>`;
             const res_tudo = `${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`;
             
+            console.log("RUN 1");
             var resultado = Run.Script1(body, rota);
+            console.log("RUN 2");
             
             res.end(`${res_tudo}`);
             console.log(`${res_tudo}`);
