@@ -49,13 +49,13 @@ const Rota1 = {
       if (id == "0") {
         res.type('txt').send(`RODANDO SCRIPT`);
         Run.Script1(body, "esperar-sim")
-          .then((resultado) => {
+/*           .then((resultado) => {
             const res_api = `<script>Script1</script>${bl}<status>OK</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>`;
             const res_run = `<resposta>${bl}${resultado}${bl}</resposta>`;
             const res_body = `<body>VAZIO-[0]</body>`;
-            /* res.type('txt').send(`${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`); */
+            res.type('txt').send(`${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`);
             console.log(`RESPOSTA FIM: ${resultado}`);
-          })
+          }) */
       };
 
       // DEVOLVER O BODY: ########### SIM ###########
