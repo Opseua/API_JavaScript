@@ -21,6 +21,7 @@ const Rota1 = {
             const res_run = `<resposta>${bl}${resultado}${bl}</resposta>`;
             const res_body = `<body>VAZIO-[0]</body>`;
             res.type('txt').send(`${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`);
+            console.log(`RESPOSTA FIM: ${resultado}`);
           })
       };
 
@@ -32,6 +33,7 @@ const Rota1 = {
             const res_run = `<resposta>${bl}${resultado}${bl}</resposta>`;
             const res_body = `<body>${bl}${body}${bl}</body>`;
             res.type('txt').send(`${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`);
+            console.log(`RESPOSTA FIM: ${resultado}`);
           })
       };
 
@@ -49,7 +51,10 @@ const Rota1 = {
         const res_run = `<resposta>AGUARDANDO</resposta>`;
         const res_body = `<body>VAZIO-[0]</body>`;
         res.type('txt').send(`${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`);
-        Run.Script1(body, "esperar-nao");
+        Run.Script1(body, "esperar-nao")
+          .then((resultado) => {
+            console.log(`RESPOSTA FIM: ${resultado}`);
+          })
       };
 
       // DEVOLVER O BODY: ########### SIM ###########
@@ -58,7 +63,10 @@ const Rota1 = {
         const res_run = `<resposta>AGUARDANDO</resposta>`;
         const res_body = `<body>${bl}${body}${bl}</body>`;
         res.type('txt').send(`${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`);
-        Run.Script1(body, "esperar-nao");
+        Run.Script1(body, "esperar-nao")
+          .then((resultado) => {
+            console.log(`RESPOSTA FIM: ${resultado}`);
+          })
       };
 
     }
@@ -87,7 +95,7 @@ async function MinhaFuncao() {
   await new Promise(resolve => setTimeout(resolve, 1500));
   console.log("2");
   await new Promise(resolve => setTimeout(resolve, 1500));
-  var soma1 = 0 ;
+  var soma1 = 0;
   var soma2 = 8;
   await new Promise(resolve => setTimeout(resolve, 1500));
   var res = "ESPEROU: " + soma1 + soma2;
