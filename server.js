@@ -45,8 +45,9 @@ const server = http.createServer((req, res) => {
             async function Teste(inf1, inf2) {
 
                 try {
+                    console.log("NOVO 1");
                     const result = await eval(inf1);
-                    console.log("TERMINANDO");
+                    console.log("NOVO 2");
                     return result;
                 }
                 catch (error) {
