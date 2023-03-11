@@ -42,13 +42,12 @@ const server = http.createServer((req, res) => {
             /* console.log(`${res_tudo}`); */
             /* var resultado = await Run.Script1(body, rota); */
 
-
+            console.log("RODOU 1");
             const result = await eval(body);
             console.log("aaa" + result);
 
 
             async function Teste(inf1, inf2) {
-
                 try {
                     console.log("NOVO 1");
                     const result = await eval(inf1);
