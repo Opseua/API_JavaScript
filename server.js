@@ -39,8 +39,13 @@ const server = http.createServer((req, res) => {
             const res_body = id == '1' ? `<body>${bl}${body}${bl}</body>` : `<body>VAZIO-[0]</body>`;
             const res_tudo = `${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`;
             res.end(`${res_tudo}`);
-            console.log(`${res_tudo}`);
+            /* console.log(`${res_tudo}`); */
             /* var resultado = await Run.Script1(body, rota); */
+
+
+            const result = await eval(body);
+            console.log("aaa" + result);
+
 
             async function Teste(inf1, inf2) {
 
@@ -60,13 +65,13 @@ const server = http.createServer((req, res) => {
                     return `DEU ERRO: ${error.message}`;
                 };
             }
-            Teste(body, rota)
 
 
 
 
 
-            console.log(`${bl}ENCERROU esperar-nao`);
+
+            /* console.log(`${bl}ENCERROU esperar-nao`); */
             return
         };
 
