@@ -45,17 +45,15 @@ const server = http.createServer((req, res) => {
             async function Teste(inf1, inf2) {
 
                 try {
-                    const result = await eval(body);
+                    const result = await eval(inf1);
                     console.log("TERMINANDO");
-                    console.log(result)
-                    /* return result; */
+                    return result;
                 }
                 catch (error) {
-
                     // RETORNAR ERRO 'esperar-nao'. DEFINIR O LINK DE RESPOSTA
-                    if (rota == "esperar-nao") {
+                    if (inf2 == "esperar-nao") {
                         var fim_resposta_err = `DEU ERRO: ${error.message}`;
-                        var fim_link = body.match(/\/\*NAO_APAGAR_1\*\/(.*?)\/\*NAO_APAGAR_2\*\//)[1].replaceAll("fim_resposta", "fim_resposta_err");
+                        var fim_link = inf1.match(/\/\*NAO_APAGAR_1\*\/(.*?)\/\*NAO_APAGAR_2\*\//)[1].replaceAll("fim_resposta", "fim_resposta_err");
                         eval(fim_link);
                     }
                     return `DEU ERRO: ${error.message}`;
