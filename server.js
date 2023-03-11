@@ -27,9 +27,8 @@ const server = http.createServer((req, res) => {
             const res_run = `<resposta>${bl}${resultado}${bl}</resposta>`;
             const res_body = id == '1' ? `<body>${bl}${body}${bl}</body>` : `<body>VAZIO-[0]</body>`;
             const res_tudo = `${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`;
-            console.log(res_run);
-            res.writeHead(200, { 'Content-Type': 'text/plain' });
             res.end(`${res_tudo}`);
+            console.log(`${res_tudo}`);
             console.log(`${bl}ENCERROU esperar-sim`);
             return
         };
@@ -39,14 +38,35 @@ const server = http.createServer((req, res) => {
             const res_run = `<resposta>AGUARDANDO</resposta>`;
             const res_body = id == '1' ? `<body>${bl}${body}${bl}</body>` : `<body>VAZIO-[0]</body>`;
             const res_tudo = `${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`;
-/*             console.log(res_run);
-            res.writeHead(200, { 'Content-Type': 'text/plain' });
-            res.end(`${res_tudo}`); */
-            
-            res.writeHead(200, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ "status": "error", "message": "aaaa" }));
+            res.end(`${res_tudo}`);
+            console.log(`${res_tudo}`);
+            /* var resultado = await Run.Script1(body, rota); */
 
-            var resultado = await Run.Script1(body, rota);
+            async function Teste(inf1, inf2) {
+
+                try {
+                    const result = await eval(body);
+                    console.log("TERMINANDO");
+                    console.log(result)
+                    /* return result; */
+                }
+                catch (error) {
+
+                    // RETORNAR ERRO 'esperar-nao'. DEFINIR O LINK DE RESPOSTA
+                    if (rota == "esperar-nao") {
+                        var fim_resposta_err = `DEU ERRO: ${error.message}`;
+                        var fim_link = body.match(/\/\*NAO_APAGAR_1\*\/(.*?)\/\*NAO_APAGAR_2\*\//)[1].replaceAll("fim_resposta", "fim_resposta_err");
+                        eval(fim_link);
+                    }
+                    return `DEU ERRO: ${error.message}`;
+                };
+            }
+            Teste(body, rota)
+
+
+
+
+
             console.log(`${bl}ENCERROU esperar-nao`);
             return
         };
