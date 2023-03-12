@@ -43,7 +43,7 @@ const server = http.createServer((req, res) => {
             const res_body = id == '1' ? `<body>${bl}${body}${bl}</body>` : `<body>VAZIO-[0]</body>`;
             const res_tudo = `${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`;
 
-            axios.post(`http://localhost:3000/instancia-1/${id}`, body, { headers: { 'Content-Type': 'text/plain' }, timeout: 1000 })
+            axios.post(`https://api-javascript.cyclic.app/instancia-1/${id}`, body, { headers: { 'Content-Type': 'text/plain' }, timeout: 1000 })
                 .then(response => { console.log("ENVIADO PARA OUTRA INSTANCIA"); }).catch(error => { console.error("ERRO"); });
 
             res.end(`${res_tudo}`);
