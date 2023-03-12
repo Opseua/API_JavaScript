@@ -1,8 +1,12 @@
-// Código secundário
-process.on('message', message => {
-  console.log(`Recebido do processo pai: ${message}`);
-});
+const axios = require('axios');
 
-process.send('Rodando');
 
-// Código secundário continuará rodando indefinidamente, mesmo após o processo pai encerrar
+const aios_body = 'Conteúdo do corpo da requisição';
+
+axios.post(`http://localhost:3000/esperar-nao/1`, body, { headers: { 'Content-Type': 'text/plain' } })
+  .then(response => {
+    console.log(response.data);
+  })
+  .catch(error => {
+    console.error(error);
+  });

@@ -2,6 +2,9 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const { spawn } = require('child_process');
 
+const controller = new AbortController();
+const signal = controller.signal;
+
 const axios = require('axios');
 const Run = require('./src/controller/Run.js');
 const bl = `
@@ -44,6 +47,7 @@ const server = http.createServer((req, res) => {
             var resultado = Run.Script1(body, rota);
             console.log("RUN 2");*/
 
+            
 
 /*             const { spawn } = require('child_process');
             const childProcess = spawn('node', ['code2.js', body, rota]);

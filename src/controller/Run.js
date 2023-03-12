@@ -15,9 +15,7 @@ const Run = {
 
     Script1: async (inf1, inf2) => {
         try {
-            console.log("OUTRO PROCESSOOO 1");
             const result = await eval(inf1);
-            console.log("OUTRO PROCESSOOO 2");
             return result;
         }
         catch (error) {

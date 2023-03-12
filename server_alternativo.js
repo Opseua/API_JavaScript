@@ -1,10 +1,9 @@
-process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 const http = require('http');
 const bodyParser = require('body-parser');
 const { spawn } = require('child_process');
 
-/* const controller = new AbortController();
-const signal = controller.signal; */
+const controller = new AbortController();
+const signal = controller.signal;
 
 const axios = require('axios');
 const Run = require('./src/controller/Run.js');
@@ -33,23 +32,16 @@ const server = http.createServer((req, res) => {
             const res_body = id == '1' ? `<body>${bl}${body}${bl}</body>` : `<body>VAZIO-[0]</body>`;
             const res_tudo = `${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`;
             res.end(`${res_tudo}`);
-            console.log(`${res_tudo}${bl}${bl}ENCERROU esperar-sim`);
+            console.log(`${res_tudo}`);
+            console.log(`${bl}ENCERROU esperar-sim`);
             return
         };
 
         if (rota == "esperar-nao") {
-            const res_api = `<script>Script1</script>${bl}<status>AGUARDANDO-PASSOU-PARA-O-OUTRO</status>${bl}<rota>${rota}</rota>${bl}<id>${id}</id>`;
-            const res_run = `<resposta>AGUARDANDO-PASSOU-PARA-O-OUTRO</resposta>`;
-            const res_body = id == '1' ? `<body>${bl}${body}${bl}</body>` : `<body>VAZIO-[0]</body>`;
-            const res_tudo = `${res_api}${bl}${bl}${res_run}${bl}${bl}${res_body}`;
 
-            axios.post(`http://localhost:3001/${rota}/${id}`, body, { headers: { 'Content-Type': 'text/plain' } })
-                .then(response => { console.log("ENVIADO PARA O OUTRO SERVIDOR"); }).catch(error => { console.error(error); });
-
-
-            res.end(`${res_tudo}`);
-            console.log(`${res_tudo}${bl}${bl}ENCERROU esperar-nao`);
+            Run.Script1(body, rota);
             return
+
         };
 
         res.writeHead(200, { 'Content-Type': 'text/plain' });
@@ -61,6 +53,6 @@ const server = http.createServer((req, res) => {
 
 
 
-server.listen(3000, () => {
-    console.log('Servidor escutando na porta 3000');
+server.listen(3001, () => {
+    console.log('Servidor escutando na porta 3001');
 });
