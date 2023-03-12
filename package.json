@@ -5,10 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm-run-all --parallel comando1 comando2",
+    "start": "node server.js",
     "comando1": "nodemon server.js",
     "comando2": "nodemon server_alternativo.js",
-    "dev": "npm-run-all --parallel comando1 comando2"
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",

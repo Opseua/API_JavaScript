@@ -1,12 +1,5 @@
 const axios = require('axios');
 
 
-const aios_body = 'Conteúdo do corpo da requisição';
-
-axios.post(`http://localhost:3000/esperar-nao/1`, body, { headers: { 'Content-Type': 'text/plain' } })
-  .then(response => {
-    console.log(response.data);
-  })
-  .catch(error => {
-    console.error(error);
-  });
+axios.post(`https://api-javascript.cyclic.app/outra-instancia/1`, body, { headers: { 'Content-Type': 'text/plain' }, timeout: 5000 })
+  .then(response => { console.log("ENVIADO PARA O OUTRO SERVIDOR"); }).catch(error => { console.error(error); });
