@@ -1,7 +1,7 @@
 const http = require('http');
 const bodyParser = require('body-parser');
 const axios = require('axios');
-const Run = require('./src/controller/Run.js');
+const Run = require('./Run.js');
 const bl = `
 `;
 
@@ -42,7 +42,6 @@ const server = http.createServer((req, res) => {
 
     });
 });
-
 
 server.listen(3000, () => {
     console.log('Servidor escutando na porta 3000');
