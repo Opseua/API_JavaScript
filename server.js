@@ -3,14 +3,14 @@ import axios from 'axios';
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+
 dotenv.config();
- 
-const port = process.env.PORT || 3000;
+const port = (process.env.HTTPPORT > 0) ? process.env.HTTPPORT : 3000;
 
 import Run from './Run.js';
 const bl = `
 `;
-
+ 
 const app = express();
 app.use(express.text());
 app.use(cors());
