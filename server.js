@@ -5,8 +5,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 
 dotenv.config();
-/* const port = (process.env.HTTPPORT > 0) ? process.env.HTTPPORT : 3000; */
-const port = 3020;
+
+const port = (process.env.HTTPPORT || '3050');
 
 import Run from './Run.js';
 const bl = `
