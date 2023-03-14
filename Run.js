@@ -1,5 +1,5 @@
-/* USAR EM ULTIMO CASO */ const axios = require('axios');
-/* USAR COMO PADRAO */    const fetch = require('node-fetch');
+/* USAR EM ULTIMO CASO */ import axios from 'axios';
+/* USAR COMO PADRAO */    import fetch from 'node-fetch';
 
 const Run = {
 
