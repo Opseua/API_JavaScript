@@ -10,7 +10,7 @@ const port = (process.env.HTTPPORT > 0) ? process.env.HTTPPORT : 3000;
 import Run from './Run.js';
 const bl = `
 `;
- 
+
 const app = express();
 app.use(express.text());
 app.use(cors());
@@ -52,5 +52,5 @@ app.post('*', async (req, res) => {
 
 
 app.listen(port, () => {
-    console.log(`Rodando na porta ${port}`);
-  });
+  console.log(`Rodando na porta ${port}`);
+});
