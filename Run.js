@@ -1,4 +1,5 @@
-const axios = require('axios');
+/* USAR EM ULTIMO CASO */ const axios = require('axios');
+/* USAR COMO PADRAO */    const fetch = require('node-fetch');
 
 const Run = {
 
@@ -15,6 +16,8 @@ const Run = {
 
     Script1: async (inf1, inf2) => {
         try {
+            /*  var inf1 = inf1.replaceAll('fetch', 'axios');
+                var inf1 = inf1.replaceAll('"body"', '"data"'); */
             const result = await eval(inf1);
             return result;
         }
