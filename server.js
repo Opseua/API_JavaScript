@@ -1,9 +1,11 @@
 // Use port number from the PORT environment variable or 3000 if not specified
+import express from 'express';
 const port = process.env.PORT || 3000;
 
-/* const http = require('http'); */
+const app = express();
 
-import http from 'http';
-const server = http.createServer(console.log("OK"))
-server.listen(port);
+// ...Express setup code...
 
+app.listen(port, () => {
+    console.log(`App listening at http://localhost:${port}`);
+});
