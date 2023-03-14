@@ -1,3 +1,6 @@
+import fetch from 'node-fetch';
+import axios from 'axios';
+
 const Run = {
 
     Teste1: async (inf1, inf2) => {
