@@ -1,6 +1,3 @@
-/* USAR EM ULTIMO CASO */ import axios from 'axios';
-/* USAR COMO PADRAO */    import fetch from 'node-fetch';
-
 const Run = {
 
     Teste1: async (inf1, inf2) => {
@@ -42,4 +39,4 @@ const Run = {
     }
 }
 
-module.exports = Run;
+export default Run;
