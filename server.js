@@ -5,6 +5,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 dotenv.config();
  
+const port = process.env.PORT || 3000;
 
 import Run from './Run.js';
 const bl = `
@@ -50,6 +51,6 @@ app.post('*', async (req, res) => {
 });
 
 
-app.listen(process.env.HTTPPORT, () => {
-    console.log(`Servidor escutando na porta ${process.env.HTTPPORT}`);
+app.listen(port, () => {
+    console.log(`Rodando na porta ${port}`);
   });
