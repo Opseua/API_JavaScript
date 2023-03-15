@@ -5,7 +5,7 @@ import cors from 'cors';
 
 import dotenv from 'dotenv';
 dotenv.config();
-const port = 3001;
+const port = 80;
 
 import Run from './Run.js';
 const bl = `
