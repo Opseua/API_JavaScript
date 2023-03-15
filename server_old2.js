@@ -15,7 +15,7 @@ const app = express();
 app.use(express.text());
 app.use(cors());
 
-/* app.post('*', async (req, res) => {
+app.post('*', async (req, res) => {
   const url1 = req.url.slice(-1) == '/' ? req.url : `${req.url}/`;
   const url2 = url1.split('/');
   const rota = url2.length > 2 ? `${url2[1]}` : 'VAZIO-ROTA';
@@ -48,7 +48,7 @@ app.use(cors());
 
   res.send('ROTA/ID NAO ENCONTRADOS!');
   return;
-}); */
+});
 
 
 app.listen(port, () => {
