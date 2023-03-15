@@ -12,8 +12,8 @@ const bl = `
 `;
 
 const app = express();
-app.use(express.text());
-app.use(cors());
+/* app.use(express.text());
+app.use(cors()); */
 
 /* app.post('*', async (req, res) => {
   const url1 = req.url.slice(-1) == '/' ? req.url : `${req.url}/`;
